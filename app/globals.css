@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-primary: #FAFAF8;
+  --bg-secondary: #F3F4EF;
+  --green-primary: #8BBE5A;
+  --green-accent: #6EA844;
+  --text-primary: #222222;
+  --gray-light: #E7E7E7;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+
+::selection {
+  background: #8BBE5A40;
+  color: #222222;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F4EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #01b66d;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+
+
+
+@theme {
+  --shadow-teal: 0 4px 20px 3px rgba(0, 95, 111, 0.45),
+              0 4px 10px -2px rgb(0, 95, 111, 0.25);
+}
+
+/* @layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @layer base {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+} */
+
+@layer utilities {
+  .clip-hero {
+    clip-path: ellipse(100% 92% at 50% 8%);
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #005734 0%, #70f334 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-textHeader {
+    background: linear-gradient(135deg, #00877E 0%, #03feed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, #005734 0%, #70f334 100%);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.691);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .glassHoverCard {
+    background: rgba(255, 255, 255, 0.382);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .glass-blue {
+    background: rgba(120, 255, 79, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(79, 134, 255, 0.15);
+  }
+}
+
+
+
+
+
+/* Gallery hover zoom */
+.gallery-item img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Pricing card hover */
+.pricing-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pricing-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Nav link hover */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #005734, #70f334);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Floating animation */
+@keyframes floatBubble {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(2deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+.float-1 { animation: floatBubble 7s ease-in-out infinite; }
+.float-2 { animation: floatBubble 9s ease-in-out 1.5s infinite; }
+.float-3 { animation: floatBubble 8s ease-in-out 3s infinite; }
+.float-4 { animation: floatBubble 6s ease-in-out 0.5s infinite; }
+
+/* Shine button effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.btn-shine:hover::after {
+  left: 125%;
+}
+
