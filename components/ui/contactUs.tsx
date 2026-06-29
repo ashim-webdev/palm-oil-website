@@ -63,20 +63,20 @@ const Contact = () => {
 //     );
 
 //     if (result.status === 200) {
-//       toast.success("Message sent successfully!", {
+//       toast.success("Your inquiry has been sent successfully!", {
 //         icon: <SendHorizonal className="w-5 h-5 text-white" />,
 //       });
 //       setTimeout(() => {
-//         toast.success("I will respond within 24 hours.", {
+//         toast.success("We'll get back to you as soon as possible.", {
 //           icon: <Clock className="w-5 h-5 text-white" />,
 //         });
 //       }, 2000)
 //       reset();
 //     } else {
-//       toast.error("Something went wrong. Please try again later.");
+//       toast.error("Unable to send your inquiry. Please contact us via WhatsApp or call us directly.");
 //     }
 //   } catch (error) {
-//     toast.error("Something might be wrong... please contact me on What'sApp");
+//     toast.error("Unable to send your inquiry. Please contact us via WhatsApp or call us directly.");
 //   }
 // };
 
@@ -112,14 +112,14 @@ const Contact = () => {
           </h2>
           <div className="w-16 h-0.5 gradient-bg mx-auto mt-5" />
           <p className="text-gray-500 mt-5 max-w-md mx-auto leading-relaxed text-sm">
-            Have questions about our furniture collection, delivery, or custom orders? We'd love to hear from you.
+            Have questions about our palm oil products, pricing, wholesale orders, or delivery? We'd be happy to assist you.
           </p>
         </FadeUp>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
           <div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-8">We're Here to Help</h3>
+            <h3 className="text-2xl font-bold text-slate-800 mb-8">Let's Talk</h3>
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
                 <motion.a
@@ -153,10 +153,10 @@ const Contact = () => {
               once: false
             }}
             className="p-6 gradient-bg rounded-lg text-white">
-              <h4 className="text-xl font-bold mb-2 flex justify-start items-center gap-2"><Sparkle size={20} /> Need Help Choosing Furniture?</h4>
-              <p className="mb-4">Our team is ready to help you find the perfect furniture for your home or office.</p>
+              <h4 className="text-xl font-bold mb-2 flex justify-start items-center gap-2"><Sparkle size={20} />Need Premium Palm Oil?</h4>
+              <p className="mb-4">Whether you're buying for your home, restaurant, supermarket, or business, we're ready to help you choose the right quantity.</p>
               <div className="text-sm opacity-90">
-                🚚 Fast delivery and customer support available
+                🚚 Fast delivery • Bulk orders • Friendly customer support
               </div>
             </motion.div>
           </div>
@@ -219,13 +219,13 @@ const Contact = () => {
                 }}
               >
                 <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
-                  <strong>Furniture Type</strong>
+                  <strong>Product Interested In</strong>
                 </label>
                 <input
                   id={'subject'}
                   {...register('subject')}
                   className={`w-full outline-0 px-4 py-3 border rounded-lg focus:ring-2 transition-colors duration-200 ${errors.subject ? 'border-red-500 focus:ring-red-500' : 'focus:ring-emerald-500 focus:border-emerald-500 border-emerald-500'}`}
-                  placeholder="What's this about?"
+                  placeholder="Example: 5L Palm Oil, Bulk Order, Delivery Inquiry"
                 />
                 {/* {errors.subject && <p className='text-sm text-red-500 mt-1'>{errors.subject.message}</p>} */}
               </motion.div>
@@ -246,7 +246,7 @@ const Contact = () => {
                   {...register('message')}
                   rows={6}
                   className={`w-full outline-0 px-4 py-3 border rounded-lg focus:ring-2 transition-colors duration-200 ${errors.message ? 'focus:ring-red-500 border-red-500' : 'focus:ring-emerald-500 focus:border-emerald-500 border-emerald-500'}`}
-                  placeholder="Tell me about your project or just say hello!"
+                  placeholder="Tell us what you need, the quantity you're interested in, or ask us any questions."
                 ></textarea>
                 {/* {errors.message && <p className='text-sm text-red-500 mt-1'>{errors.message.message}</p>} */}
               </motion.div>
@@ -261,7 +261,7 @@ const Contact = () => {
                 className="w-full px-8 py-4 gradient-bg text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl cursor-pointer disabled:cursor-not-allowed disabled:bg-blue-400 disabled:hover:bg-blue-400"
               >
                 <Send size={20} />
-                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                <span>{isSubmitting ? 'Sending...' : 'Place Inquiry'}</span>
               </motion.button>
               <ToastContainer
                   position="top-right"

@@ -4,16 +4,28 @@ import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 
 
 const stats = [
-  { value: '6+', label: 'Years Crafting Furniture' },
-  { value: '4K+', label: 'Furniture Pieces Delivered' },
-  { value: '98%', label: 'Customer Satisfaction' },
-  { value: '12+', label: 'Furniture Collections' },
-];
+  {
+    value: "6+",
+    label: "Years of Experience"
+  },
+  {
+    value: "5K+",
+    label: "Happy Customers"
+  },
+  {
+    value: "100%",
+    label: "Natural Palm Oil"
+  },
+  {
+    value: "24/7",
+    label: "Customer Support"
+  }
+]
 
 export default function About() {
   return (
-    <section id="about" className="md:scroll-mt-20 scroll-mt-50 md:my-30 my-20 lg:mt-2 lg:mb-15 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="md:scroll-mt-20 scroll-mt-50 lg:mt-0 mt-20 mb-10 lg:pt-0 pt-16 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto lg:px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Image collage */}
           <div className="relative flex items-center justify-center">
@@ -87,14 +99,14 @@ export default function About() {
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <span className="font-sans font-extrabold text-[10px] gradient-text uppercase tracking-widest leading-none">
-                    Quality Assured
+                    Premium Quality
                   </span>
                 </div>
                 <span className="font-sans font-black text-xl font-800 gradient-text block leading-tight">
-                  99.8% Rate
+                  100% Pure
                 </span>
                 <span className="font-sans text-[10px] font-medium text-slate-900 block leading-tight mt-0.5">
-                  Customer satisfaction across all furniture collections.
+                  Freshly processed palm oil trusted by homes and businesses.
                 </span>
               </div>
 
@@ -108,14 +120,14 @@ export default function About() {
                     <Sparkles className="w-4 h-4 fill-brand-300 text-[#005734]" />
                   </div>
                   <span className="font-sans font-extrabold text-[9px] gradient-text uppercase tracking-widest leading-none ">
-                    Crafted Collection
+                    Happy Customers
                   </span>
                 </div>
                 <span className="font-sans font-black  text-xl font-800 gradient-text block leading-tight">
-                  4k+ Pieces
+                  5,000+
                 </span>
                 <span className="font-sans text-[10px] font-medium text-slate-900 block leading-tight mt-0.5">
-                  Beautiful furniture pieces delivered to happy customers.
+                  Satisfied families, restaurants, and food vendors served.
                 </span>
               </div>
 
@@ -142,19 +154,19 @@ export default function About() {
           {/* Content */}
           <div className='mt-10'>
             <div className="inline-flex items-center gap-2 glass-blue rounded-full px-4 py-2 mb-6">
-              <span className="text-sm font-600 gradient-text">Our Story</span>
+              <span className="text-sm font-600 gradient-text">Our Goal</span>
             </div>
               <div className="text-5xl font-800 tracking-tight text-slate-900 mb-6 leading-tight">
-                Bringing Comfort And Style To{' '}
-                <span className="gradient-text italic pr-2">Every Living Space</span>
+                Bringing Freshness And Quality To{' '}
+                <span className="gradient-text italic pr-2">Every Kitchen</span>
               </div>
 
               <p className="text-slate-500 leading-relaxed mb-5">
-                Furnish was founded with a passion for creating furniture that combines timeless design, exceptional craftsmanship, and everyday comfort. From elegant living room pieces to functional bedroom and dining collections, we help transform houses into beautiful homes.
+                Our business was founded with a commitment to providing fresh, high-quality palm oil to homes, restaurants, and food businesses. Every bottle is carefully processed to preserve its rich color, natural taste, and nutritional value.
               </p>
 
               <p className="text-slate-500 leading-relaxed mb-10">
-                Every piece we create is carefully designed using premium materials and attention to detail. Our mission is to provide furniture that not only enhances your space but also delivers lasting quality, comfort, and value for years to come.
+                We source only the finest palm fruits and process them with care to ensure purity and freshness. Whether you're cooking for your family or running a business, you can count on us for consistent quality and dependable service.
               </p>
 
             {/* Stats grid */}
@@ -168,10 +180,10 @@ export default function About() {
             </div>
 
             <a
-              href="#collection"
+              href="#products"
               className="btn-shine inline-flex items-center gap-2.5 gradient-bg text-white font-700 px-7 py-4 rounded-2xl shadow-blue hover:opacity-90 transition-all"
             >
-              Explore Our Collection
+              View Our Products
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>

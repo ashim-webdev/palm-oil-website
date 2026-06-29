@@ -254,8 +254,8 @@ function Navigation() {
     <>
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-        ? 'bg-white/70 backdrop-blur-xl shadow-sm border-b border-white/40 py-3'
-        : 'bg-transparent py-2'
+        ? 'bg-white/70 backdrop-blur-xl shadow-sm border-b border-white/40 py-1'
+        : 'bg-transparent py-0.5'
       }`}
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -272,13 +272,19 @@ function Navigation() {
             className="flex items-center gap-2"
             whileHover={{ scale: 1.03 }}
           >
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <circle cx="16" cy="16" r="15" fill="#8BBE5A" opacity="0.15" />
-              <ellipse cx="16" cy="16" rx="6" ry="11" fill="#8BBE5A" transform="rotate(-20 16 16)" />
-              <ellipse cx="16" cy="16" rx="6" ry="11" fill="#6EA844" opacity="0.6" transform="rotate(20 16 16)" />
-            </svg>
-            <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '1.15rem', color: '#222' }}>
-              Lumière
+            <a href='#home'>
+              <Image
+                src="/palmLogo.svg"
+                alt="Logo"
+                width={50}
+                height={50}
+              />
+            </a>
+
+            <span 
+              className='lg:block hidden italic' 
+              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '1.15rem', color: '#222' }}>
+              Frank Hèritage
             </span>
           </motion.div>
 
@@ -402,7 +408,7 @@ function HeroSection() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#8BBE5A]/10 border border-[#8BBE5A]/20 text-[#6EA844] text-xs font-semibold tracking-widest uppercase mb-6"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#8BBE5A] animate-pulse gradient-text" />
-              100% Organic Skincare
+              100% Pure Palm Oil
             </motion.div>
 
             <motion.h1
@@ -412,13 +418,13 @@ function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              MAKE YOUR
+              PURE
               <br />
-              <span className='gradient-text'>OWN BEAUTY</span>
+              <span className='gradient-text'>PALM OIL</span>
               <br />
-              WITH OUR
+              FOR EVERY
               <br />
-              COSMETICS
+              HOME
             </motion.h1>
 
             <motion.p
@@ -428,7 +434,7 @@ function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
             >
-              Discover nature's finest ingredients crafted into luxurious skincare formulas. Elevate your daily ritual with botanical excellence.
+              Experience the rich taste and natural goodness of freshly processed premium palm oil. Perfect for cooking, frying, and bringing authentic flavor to every meal.
             </motion.p>
 
             <motion.div
@@ -438,11 +444,11 @@ function HeroSection() {
               transition={{ duration: 0.7, delay: 0.65 }}
             >
               <div className="flex items-center gap-3 mt-4 justify-center lg:justify-start">
-                <a href='#collection' className="border border-[#004B18] text-white gradient-bg px-8 py-3.5 rounded-full text-sm font-medium hover:text-green-100 hover:scale-105  transition-all duration-200">
-                  Explore
+                <a href='#products' className="border border-[#004B18] text-white gradient-bg px-8 py-3.5 rounded-full text-sm font-medium hover:text-green-100 hover:scale-105  transition-all duration-200">
+                  Our Products
                 </a>
-                <a href='#gallery' className="bg-white border-gray-200 border text-green-600 px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-teal-50 transition-all duration-200 flex items-center gap-2 hover:gap-4 whitespace-nowrap">
-                  Gallery <ArrowRight size={14} />
+                <a href='#CtaBanner' className="bg-white border-gray-200 border text-green-600 px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-teal-50 transition-all duration-200 flex items-center gap-2 hover:gap-4 whitespace-nowrap">
+                  Contact <ArrowRight size={14} />
                 </a>
               </div>
             </motion.div>
@@ -547,29 +553,47 @@ function HeroSection() {
 // ── About Section ──────────────────────────────────────────────────────────────
 function AboutSection() {
   const features = [
-    { icon: '🌿', title: 'Natural Ingredients', desc: 'Sourced from certified organic farms worldwide' },
-    { icon: '✨', title: 'Premium Quality', desc: 'Every formula is dermatologist tested and approved' },
-    { icon: '🌱', title: '100% Organic', desc: 'No harmful chemicals or synthetic preservatives' },
-    { icon: '🏆', title: 'Best Quality', desc: 'Award-winning formulas loved by millions globally' },
+    {
+      icon: '🌴',
+      title: 'Freshly Harvested',
+      desc: 'Produced from carefully selected fresh palm fruits.'
+    },
+    {
+      icon: '🛢️',
+      title: 'Pure Palm Oil',
+      desc: '100% natural with no additives or artificial coloring.'
+    },
+    {
+      icon: '🚚',
+      title: 'Fast Delivery',
+      desc: 'Reliable delivery to homes, restaurants, and businesses.'
+    },
+    {
+      icon: '⭐',
+      title: 'Trusted Quality',
+      desc: 'Serving families and food businesses with premium palm oil.'
+    },
   ];
 
   return (
-    <div className='relative border-b border-green-200'>
+    <div className='relative'>
       <section id="about" className="pt-28 pb-28 " style={{ background: '#FAFAF8' }}>
         <div className="max-w-7xl mx-auto px-6">
-          <FadeUp className="text-center mb-20">
+          <FadeUp className="text-center ">
             <p className="text-xs tracking-[0.25em] uppercase gradient-text font-semibold mb-3">Our Story</p>
             <h2 className="text-4xl xl:text-6xl font-black" style={{ fontFamily: 'Poppins, sans-serif', color: '#222', letterSpacing: '-0.02em' }}>
               ABOUT OUR
-              <span className='gradient-text'> COSMETICS</span>
+              <span className='gradient-text'> BRAND</span>
             </h2>
             <div className="w-16 h-0.5 gradient-bg mx-auto mt-5" />
             <p className="text-gray-500 mt-5 max-w-md mx-auto leading-relaxed text-sm">
-              Born from a passion for pure, powerful botanicals — we believe that luxury and sustainability are not a compromise.
+              Our journey began with a simple mission—to provide every home and business with fresh, premium-quality palm oil processed using the finest traditional and modern methods.
             </p>
           </FadeUp>
 
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
+          <AboutCompany />
+
+          <div className="grid lg:grid-cols-3 gap-12 items-center border-t border-[#005734] pt-20">
             {/* Left features */}
             <div className="space-y-8">
               {features.slice(0, 2).map((f, i) => (
@@ -671,28 +695,28 @@ function AboutSection() {
 // ── Products Section ───────────────────────────────────────────────────────────
 const products = [
   {
-    name: 'Botanical Serum Elite',
-    desc: 'A powerfully concentrated botanical extract that revitalizes, firms, and illuminates your skin with each application.',
-    price: '$89',
+    name: '500ml Premium Palm Oil',
+    desc: 'Freshly processed, 100% natural palm oil. Perfect for everyday home cooking with its rich taste and vibrant red color.',
+    price: '₦2,500',
     tag: 'Best Seller',
   },
   {
-    name: 'Amber Revival Oil',
-    desc: 'Precious golden oil infused with rosehip, argan, and marula extracts for deep nourishment and radiant glow.',
-    price: '$72',
-    tag: 'New',
-  },
-  {
-    name: 'Purity Cleansing Balm',
-    desc: 'A velvety cleansing balm that melts away impurities while leaving skin soft, hydrated, and perfectly balanced.',
-    price: '$58',
-    tag: 'Organic',
-  },
-  {
-    name: 'Radiance Day Cream',
-    desc: 'Lightweight yet deeply moisturising day cream with SPF 30 protection and brightening vitamin C complex.',
-    price: '$95',
+    name: '1 Litre Premium Palm Oil',
+    desc: 'Pure, additive-free palm oil carefully processed to preserve its natural flavor and nutritional value.',
+    price: '₦4,500',
     tag: 'Popular',
+  },
+  {
+    name: '5 Litre Family Pack',
+    desc: 'Ideal for large families, restaurants, and catering businesses. Premium quality at a great value.',
+    price: '₦20,000',
+    tag: 'Value Pack',
+  },
+  {
+    name: '25 Litre Bulk Supply',
+    desc: 'Perfect for wholesalers, food vendors, and commercial kitchens looking for consistent quality and reliable supply.',
+    price: '₦95,000',
+    tag: 'Wholesale',
   },
 ];
 
@@ -757,10 +781,10 @@ function ProductShowcase() {
     <section id="products" className="py-28 overflow-hidden" style={{ background: '#F3F4EF' }}>
       <div className="max-w-7xl mx-auto px-6 z-10">
         <FadeUp className="relative text-center mb-20 z-40">
-          <p className="text-xs tracking-[0.25em] uppercase gradient-text font-semibold mb-3 z-10">Our Collection</p>
+          <p className="text-xs tracking-[0.25em] uppercase gradient-text font-semibold mb-3 z-10">Our Products</p>
           <h2 className="text-4xl xl:text-6xl font-black z-10" style={{ fontFamily: 'Poppins, sans-serif', color: '#222', letterSpacing: '-0.02em' }}>
             CHOOSE YOUR
-            <span className='gradient-text'> SET</span>
+            <span className='gradient-text'> SIZE</span>
           </h2>
           <div className="w-16 h-0.5 gradient-bg mx-auto mt-5" />
 
@@ -821,7 +845,7 @@ function ProductShowcase() {
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <span className='bg-green-100 p-1 rounded-full'>
-                    <span className="inline-block px-3 py-1  gradient-text text-xs font-semibold tracking-widest uppercase mb-4">
+                    <span className="inline-block px-3 py-1 gradient-text text-xs font-semibold tracking-widest uppercase mb-4">
                       {product.tag}
                     </span>
                   </span>
@@ -834,20 +858,22 @@ function ProductShowcase() {
               </AnimatePresence>
 
               <div className="flex flex-wrap gap-3 mb-8">
-                <motion.button
+                <motion.a
+                  href='#CtaBanner'
                   className="px-7 py-3.5 rounded-full gradient-bg text-white text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-100 shadow-lg shadow-[#8BBE5A]/20"
                   whileHover={{ scale: 1.04, y: -2 }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  Add to Cart
-                </motion.button>
-                <motion.button
+                  Buy Now
+                </motion.a>
+                <motion.a
+                  href='#contact'
                   className="px-7 py-3.5 rounded-full border-2 border-[#005734] text-[#005734] text-sm font-semibold tracking-wide hover:bg-[#8BBE5A]/5 transition-colors duration-300"
                   whileHover={{ scale: 1.04, y: -2 }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  View Details
-                </motion.button>
+                  Custom Order
+                </motion.a>
               </div>
 
               {/* Navigation */}
@@ -900,7 +926,7 @@ function PromoBanner() {
       <div className="max-w-7xl mx-auto px-6">
         <FadeUp>
           <div
-            className="relative rounded-3xl overflow-hidden"
+            className="relative rounded-3xl overflow-y-hidden overflow-x-auto sm:hidden flex items-center justify-center"
             style={{ background: 'linear-gradient(135deg, #F3F4EF 0%, #EBF0E4 100%)' }}
           >
             {/* Background decorative shapes */}
@@ -954,28 +980,119 @@ function PromoBanner() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <span className="text-xs tracking-[0.3em] uppercase gradient-text font-semibold mb-4 block">Limited Time</span>
+                  <span className="text-xs tracking-[0.3em] uppercase gradient-text font-semibold mb-4 block">Special Deal</span>
                   <h2 className="gradient-text text-6xl xl:text-8xl font-black leading-none mb-2"
                     style={{ fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.03em' }}>
-                    SPECIAL
+                    WHOLESALE
                   </h2>
                   <h2 className="gradient-text text-6xl xl:text-8xl font-black leading-none mb-6"
                     style={{ fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.03em' }}>
-                    OFFER
+                    PRICE
                   </h2>
                   <div className="flex items-baseline gap-3 mb-3">
                     <span className="text-4xl font-black text-[#222]" style={{ fontFamily: 'Poppins, sans-serif' }}>30%</span>
                     <span className="text-xl font-semibold text-gray-500">OFF</span>
                   </div>
                   <p className="text-gray-600 text-base mb-8">
-                    Buy 5 different sets from our collection and enjoy an exclusive 30% discount on your entire order.
+                    Need palm oil in large quantities? We offer affordable bulk pricing with fast and reliable delivery.
                   </p>
                   <motion.button
                     className="relative px-10 py-4 rounded-full gradient-bg text-white text-sm font-bold tracking-widest uppercase shadow-xl shadow-[#8BBE5A]/30 overflow-hidden"
                     whileHover={{ scale: 1.05, y: -3 }}
                     whileTap={{ scale: 0.97 }}
                   >
-                    <span className="relative z-10">SHOP SETS NOW</span>
+                    <a href='#CtaBanner' className="relative z-10">ORDER NOW</a>
+                    <motion.div
+                      className="absolute inset-0 bg-[#6EA844]"
+                      initial={{ x: '-100%' }}
+                      whileHover={{ x: 0 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.button>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </FadeUp>
+
+        <FadeUp>
+          <div
+            className="relative rounded-3xl overflow-hidden hidden sm:flex items-center justify-center"
+            style={{ background: 'linear-gradient(135deg, #F3F4EF 0%, #EBF0E4 100%)' }}
+          >
+            {/* Background decorative shapes */}
+            <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-20 -translate-y-1/4 translate-x-1/4"
+              style={{ background: 'radial-gradient(circle, #8BBE5A 0%, transparent 70%)' }} />
+            <div className="absolute bottom-0 left-32 w-64 h-64 rounded-full opacity-10"
+              style={{ background: 'radial-gradient(circle, #6EA844 0%, transparent 70%)' }} />
+
+            <div className="grid lg:grid-cols-2 gap-0 items-center min-h-[440px]">
+              {/* Left — product image */}
+              <div className="relative flex items-center justify-center p-12">
+                <motion.div
+                  className="absolute w-72 h-72 rounded-full opacity-25"
+                  style={{ background: 'radial-gradient(circle, #A8D480 0%, transparent 70%)' }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+                />
+                <div className="relative z-10 flex items-end gap-4">
+                  <motion.div
+                    animate={{ y: [0, -18, 0] }}
+                    transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
+                    whileHover={{ scale: 1.06, rotate: -3 }}
+                  >
+                    <AmberBottle size={140} />
+                  </motion.div>
+                  <motion.div
+                    animate={{ y: [0, -22, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                    whileHover={{ scale: 1.06, rotate: 3 }}
+                  >
+                    <WhiteBottle size={160} />
+                  </motion.div>
+                  <motion.div
+                    animate={{ y: [0, -14, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+                    whileHover={{ scale: 1.06 }}
+                  >
+                    <DropperBottle size={110} />
+                  </motion.div>
+                </div>
+                <Leaf className="top-8 left-8" delay={0} size={60} />
+                <SmallLeaf className="bottom-10 right-6" delay={1.2} rotate={-40} />
+                <CoffeeBean className="top-20 right-16" delay={0.5} />
+              </div>
+
+              {/* Right — offer text */}
+              <div className="p-12 lg:pr-16 relative z-10">
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <span className="text-xs tracking-[0.3em] uppercase gradient-text font-semibold mb-4 block">Special Deal</span>
+                  <h2 className="gradient-text text-6xl xl:text-8xl font-black leading-none mb-2"
+                    style={{ fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.03em' }}>
+                    WHOLESALE
+                  </h2>
+                  <h2 className="gradient-text text-6xl xl:text-8xl font-black leading-none mb-6"
+                    style={{ fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.03em' }}>
+                    PRICE
+                  </h2>
+                  <div className="flex items-baseline gap-3 mb-3">
+                    <span className="text-4xl font-black text-[#222]" style={{ fontFamily: 'Poppins, sans-serif' }}>30%</span>
+                    <span className="text-xl font-semibold text-gray-500">OFF</span>
+                  </div>
+                  <p className="text-gray-600 text-base mb-8">
+                    Need palm oil in large quantities? We offer affordable bulk pricing with fast and reliable delivery.
+                  </p>
+                  <motion.button
+                    className="relative px-10 py-4 rounded-full gradient-bg text-white text-sm font-bold tracking-widest uppercase shadow-xl shadow-[#8BBE5A]/30 overflow-hidden"
+                    whileHover={{ scale: 1.05, y: -3 }}
+                    whileTap={{ scale: 0.97 }}
+                  >
+                    <a href='#CtaBanner' className="relative z-10">ORDER NOW</a>
                     <motion.div
                       className="absolute inset-0 bg-[#6EA844]"
                       initial={{ x: '-100%' }}
@@ -996,22 +1113,22 @@ function PromoBanner() {
 // ── Testimonials ───────────────────────────────────────────────────────────────
 const testimonials = [
   {
-    quote: "Lumière has completely transformed my skincare routine. The botanical serum is unlike anything I've ever tried — my skin has never looked more luminous.",
-    name: 'Sophie Laurent',
-    role: 'Beauty Editor, Vogue Paris',
-    initials: 'SL',
+    quote: "I've been buying palm oil from this brand for over two years now. The quality is always consistent, fresh, and perfect for all my family meals.",
+    name: 'Amina Yusuf',
+    role: 'Home Cook',
+    initials: 'AY',
   },
   {
-    quote: "The quality and purity of these products is extraordinary. I trust Lumière completely for my daily ritual — every formulation is simply perfection.",
-    name: 'Elena Marchetti',
-    role: 'Wellness Advocate',
-    initials: 'EM',
+    quote: "As a restaurant owner, quality ingredients matter. Their palm oil gives our dishes an authentic taste, and deliveries are always on time.",
+    name: 'Chinedu Okafor',
+    role: 'Restaurant Owner',
+    initials: 'CO',
   },
   {
-    quote: "Finally a luxury brand that actually delivers on its promises. The amber revival oil transformed my skin texture within two weeks. Worth every penny.",
-    name: 'Claire Winters',
-    role: 'Dermatologist & Author',
-    initials: 'CW',
+    quote: "Excellent customer service and premium-quality palm oil. I highly recommend them for both household and wholesale purchases.",
+    name: 'Grace Eze',
+    role: 'Food Vendor',
+    initials: 'GE',
   },
 ];
 
@@ -1020,10 +1137,10 @@ function TestimonialsSection() {
     <section className="py-28 overflow-hidden" style={{ background: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto px-6">
         <FadeUp className="text-center mb-20">
-          <p className="text-xs tracking-[0.25em] uppercase gradient-text font-semibold mb-3">Testimonials</p>
+          <p className="text-xs tracking-[0.25em] uppercase gradient-text font-semibold mb-3">Customers Review</p>
           <h2 className="text-4xl xl:text-6xl font-black" style={{ fontFamily: 'Poppins, sans-serif', color: '#222', letterSpacing: '-0.02em' }}>
-            WHAT THEY
-            <span className='gradient-text'> SAY</span>
+            WHAT OUR
+            <span className='gradient-text'> CUSTOMERS SAY</span>
           </h2>
           <div className="w-16 h-0.5 bg-[#8BBE5A] mx-auto mt-5" />
         </FadeUp>
@@ -1070,9 +1187,15 @@ function TestimonialsSection() {
 
         {/* Brand logos */}
         <FadeUp delay={0.3} className="mt-16">
-          <p className="text-center text-xs text-gray-400 uppercase tracking-widest mb-8">As featured in</p>
+          <p className="text-center text-xs text-gray-400 uppercase tracking-widest mb-8">Trusted By</p>
           <div className="flex flex-wrap items-center justify-center gap-10">
-            {['Vogue', 'Harper\'s Bazaar', 'Elle', 'Allure', 'Forbes'].map((brand) => (
+            {[
+              'Restaurants',
+              'Hotels',
+              'Food Vendors',
+              'Supermarkets',
+              'Wholesalers'
+            ].map((brand) => (
               <span
                 key={brand}
                 className="text-gray-300 text-base font-bold tracking-wider hover:text-gray-400 transition-colors duration-200 cursor-default"
@@ -1093,21 +1216,26 @@ function Footer() {
   return (
     <footer style={{ background: '#20382f', color: '#FAFAF8' }} className="pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-5">
-              <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="15" fill="#8BBE5A" opacity="0.2" />
-                <ellipse cx="16" cy="16" rx="6" ry="11" fill="#8BBE5A" transform="rotate(-20 16 16)" />
-                <ellipse cx="16" cy="16" rx="6" ry="11" fill="#6EA844" opacity="0.7" transform="rotate(20 16 16)" />
-              </svg>
-              <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '1.1rem', color: '#FAFAF8' }}>
-                Lumière
+              <a href='#home' className='p-2 bg-white rounded-full'>
+                <Image
+                  src="/palmLogo.svg"
+                  alt="Logo"
+                  width={50}
+                  height={50}
+                />
+              </a>
+              <span
+                className='italic'
+                style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '1.1rem', color: '#FAFAF8' }}>
+                Frank Hèritage
               </span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-6">
-              Premium botanical skincare for the discerning individual. Pure, powerful, and sustainably crafted.
+              Providing premium-quality, 100% natural palm oil for homes, restaurants, supermarkets, and businesses across Nigeria. Freshness and quality you can trust.
             </p>
             <div className="flex gap-3">
               {['IG', 'FB', 'TW', 'YT'].map((s) => (
@@ -1128,7 +1256,7 @@ function Footer() {
             <ul className="space-y-3">
               {['Home', 'About', 'Products', 'Offers', 'Contact'].map((l) => (
                 <li key={l}>
-                  <a href="#" className="text-sm text-gray-400 hover:text-[#8BBE5A] transition-colors duration-200">{l}</a>
+                  <a href={`#${l.toLowerCase()}`} className="text-sm text-gray-400 hover:text-[#8BBE5A] transition-colors duration-200">{l}</a>
                 </li>
               ))}
             </ul>
@@ -1138,7 +1266,7 @@ function Footer() {
           <div>
             <h4 className="text-sm font-bold mb-5 text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>Products</h4>
             <ul className="space-y-3">
-              {['Serums', 'Facial Oils', 'Moisturisers', 'Cleansers', 'Eye Care', 'Gift Sets'].map((l) => (
+              {['500ml Bottle', '1 litre Bottle', '5 litre Jerry Can', '25 litre Container', 'Wholesale Orders', 'Bulk Supply'].map((l) => (
                 <li key={l}>
                   <a href="#" className="text-sm text-gray-400 hover:text-[#8BBE5A] transition-colors duration-200">{l}</a>
                 </li>
@@ -1148,12 +1276,12 @@ function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-sm font-bold mb-5 text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>Newsletter</h4>
-            <p className="text-sm text-gray-400 mb-4">Get exclusive offers and skincare tips delivered to your inbox.</p>
+            <h4 className="text-sm font-bold mb-5 text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>Stay Updated</h4>
+            <p className="text-sm text-gray-400 mb-4">Subscribe to receive updates on new stock, special offers, and wholesale pricing.</p>
             <div className="flex gap-2">
               <input
                 type="email"
-                placeholder="Your email"
+                placeholder="Enter your email"
                 className="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#70f334] transition-colors"
               />
               <motion.button
@@ -1199,7 +1327,27 @@ function LoadingScreen() {
       }}
       id="loading-screen"
     >
-      <div className="text-center">
+      <div className="flex flex-col justify-center items-center gap-4">
+
+        <div className='flex flex-col justify-center items-center gap-2'>
+          <span>
+            <Image
+              src="/palmLogo.svg"
+              alt="Logo"
+              width={50}
+              height={50}
+            />
+          </span>
+
+          <motion.span
+            className="text-xs tracking-[0.3em] italic uppercase text-gray-400"
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            Frank Hèritage
+          </motion.span>
+        </div>
+
         <motion.div
           className="w-16 h-16 mx-auto mb-4"
           animate={{ rotate: 360 }}
@@ -1211,13 +1359,6 @@ function LoadingScreen() {
               strokeDasharray="88" strokeDashoffset="44" strokeLinecap="round" />
           </svg>
         </motion.div>
-        <motion.span
-          className="text-xs tracking-[0.3em] uppercase text-gray-400"
-          animate={{ opacity: [0.4, 1, 0.4] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          Lumière
-        </motion.span>
       </div>
     </motion.div>
   );
@@ -1242,7 +1383,6 @@ export default function Home() {
         <Navigation />
         <HeroSection />
         <AboutSection />
-        <AboutCompany />
         <ProductShowcase />
         <PromoBanner />
         <ContactUs />

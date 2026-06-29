@@ -14,13 +14,13 @@ export default function CtaBanner() {
           <div className="relative z-10 flex flex-col justify-center items-center gap-4 ">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur rounded-full px-4 py-2 mb-7">
               <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm font-600 text-white whitespace-nowrap">Discover Your Perfect Furniture</span>
+              <span className="text-sm font-600 text-white whitespace-nowrap">Fresh • Natural • Premium Quality</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-800 text-white mb-5 leading-tight tracking-tight">
-              Ready To Transform Your Living Space?
+              Ready To Order Premium Palm Oil?
             </h2>
             <p className="text-lg text-blue-100 mb-10 max-w-xl mx-auto leading-relaxed">
-              From elegant sofas and dining sets to modern bedroom collections, we create furniture designed to bring comfort, style, and lasting quality into your home. Explore our collection today and discover pieces crafted for modern living.
+              Whether you're buying for your home, restaurant, supermarket, or business, we provide freshly processed, premium-quality palm oil at competitive price with reliable delivery.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -34,10 +34,10 @@ export default function CtaBanner() {
                 +234 703 718 9416
               </a>
               <a
-                href="#collection"
+                href="#products"
                 className="btn-shine flex items-center gap-2.5 bg-white/15 backdrop-blur border-2 border-white/40 text-white font-700 px-8 py-4 rounded-2xl hover:bg-white/25 transition-all duration-300 whitespace-nowrap"
               >
-                Browse Collection
+                View Our Product
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
