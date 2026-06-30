@@ -1,8 +1,12 @@
+import { Icon } from 'lucide-react';
 import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Lumière Botanicals — Premium Organic Skincare',
+  title: 'Frank Hèritage',
+  icons: {
+    icon: "/palmLogo.svg"
+  },
   description: 'Luxury botanical skincare crafted from 100% organic ingredients. Elevate your beauty ritual with our premium cosmetics collection.',
   metadataBase: new URL('https://lumiere-botanicals.com'),
 };
@@ -19,6 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body style={{ fontFamily: "'Inter', sans-serif" }}>{children}</body>
+
+      {/* <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat --> */}
+      <script src="https://elfsightcdn.com/platform.js" async></script>
     </html>
   );
 }

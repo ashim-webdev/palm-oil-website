@@ -13,7 +13,7 @@ import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { FadeUp } from '@/app/page';
+import { FadeUp } from '@/components/ui/fadeUp';
 
 
 const contactSchema = z.object({
