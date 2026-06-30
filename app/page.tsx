@@ -913,7 +913,7 @@ function PromoBanner() {
       <div className="max-w-7xl mx-auto px-6">
         <FadeUp>
           <div
-            className="relative rounded-3xl overflow-y-hidden overflow-x-auto sm:hidden flex items-center justify-center"
+            className="relative rounded-tl-3xl rounded-tr-3xl overflow-y-hidden overflow-x-auto sm:hidden flex items-center justify-center pl-16"
             style={{ background: 'linear-gradient(135deg, #F3F4EF 0%, #EBF0E4 100%)' }}
           >
             {/* Background decorative shapes */}
